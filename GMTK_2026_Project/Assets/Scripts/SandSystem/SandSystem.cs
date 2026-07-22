@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class SandSystem : MonoBehaviour
 {
-    
     [SerializeField] private float sandTimerMax;
     [SerializeField] private float sandTimerDecrementSpeed;
     [SerializeField] private Slider sandTimerSlider;
