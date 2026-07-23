@@ -3,7 +3,8 @@ using UnityEngine;
 public class LungeEnemy : MonoBehaviour
 {
     [Header("References")]
-    public Transform player; 
+    public Transform player;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     [Header("Follow Settings")]
     public float followSpeed = 3f;
@@ -18,14 +19,19 @@ public class LungeEnemy : MonoBehaviour
     [Header("Dash Cooldown")]
     public float dashCooldown = 3f; 
 
-    private enum State { Following, Waiting, Dashing }
+    [Header("Game Lifetime")]
+    public float totalLifetime = 10f;
+    public float fadeDuration = 1f;
+    
+    private enum State { Following, Waiting, Dashing, Dying }
     private State currentState = State.Following;
 
     private float stateTimer;
     private float dashCooldownTimer;
     private Vector2 dashDirection;
     private Vector2 dashTarget;
-
+    private float lifeTimer;
+    
     void Start()
     {
         if (player == null)
@@ -33,10 +39,28 @@ public class LungeEnemy : MonoBehaviour
             GameObject p = GameObject.FindGameObjectWithTag("Player");
             if (p != null) player = p.transform;
         }
+
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
     }
 
     void Update()
     {
+        lifeTimer += Time.deltaTime;
+
+        if (currentState != State.Dying && lifeTimer >= totalLifetime - fadeDuration)
+        {
+            StartDying();
+        }
+
+        if (currentState == State.Dying)
+        {
+            HandleDying();
+            return;
+        }
+
         if (player == null) return;
         
         if (currentState != State.Dashing && dashCooldownTimer > 0f)
@@ -99,8 +123,7 @@ public class LungeEnemy : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, dashTarget, dashSpeed * Time.deltaTime);
         stateTimer -= Time.deltaTime;
-
-        //bool reachedTarget = Vector2.Distance(transform.position, dashTarget) < 0.1f;
+        
         if (stateTimer <= 0f)
         {
             dashCooldownTimer = dashCooldown;
@@ -108,8 +131,39 @@ public class LungeEnemy : MonoBehaviour
         }
     }
 
+    void StartDying()
+    {
+        currentState = State.Dying;
+        stateTimer = fadeDuration;
+    }
+
+    void HandleDying()
+    {
+        stateTimer -= Time.deltaTime;
+
+        float t = fadeDuration > 0f ? Mathf.Clamp01(stateTimer / fadeDuration) : 0f;
+        SetAlpha(t);
+
+        if (stateTimer <= 0f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void SetAlpha(float alpha)
+    {
+        if (spriteRenderer == null)
+            return;
+
+        Color c = spriteRenderer.color;
+        c.a = alpha;
+        spriteRenderer.color = c;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (currentState == State.Dying) return;
+
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         if (playerHealth)
         {
@@ -122,4 +176,6 @@ public class LungeEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, triggerDistance);
     }
+    
+
 }

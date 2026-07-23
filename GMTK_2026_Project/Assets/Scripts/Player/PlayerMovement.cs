@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
             dashTimer -= Time.deltaTime;
             if (dashTimer <= 0f)
             {
+                GetComponent<PlayerHealth>().IsInvulnerable = false;
                 isDashing = false;
             }
         }
@@ -103,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
+        GetComponent<PlayerHealth>().IsInvulnerable = true;
     }
 
     public void EnableMovement()

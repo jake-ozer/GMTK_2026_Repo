@@ -476,6 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9559f530a4190ca4fad8f5504563f405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SandSystem
-  sandTimerMax: 15
+  sandTimerMax: 30
   sandTimerDecrementSpeed: 1
   sandTimerSlider: {fileID: 6325332956179209645}

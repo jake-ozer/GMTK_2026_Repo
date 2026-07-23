@@ -13,7 +13,16 @@ public class PlayerHealth : MonoBehaviour
 
     private List<GameObject> curHearts;
 
-    public bool IsInvulnerable { get; set; }
+    private bool isInvulnerable;
+    public bool IsInvulnerable
+    {
+        get => isInvulnerable;
+        set
+        {
+            isInvulnerable = value;
+            SetAlpha(isInvulnerable ? 0.25f : 1f);
+        }
+    }
 
     private void Start()
     {
@@ -49,7 +58,6 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator InvulnerabilityCoroutine()
     {
         IsInvulnerable = true;
-        SetAlpha(0.25f);
 
         yield return new WaitForSeconds(refractoryPeriod);
         
@@ -58,7 +66,6 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<Collider2D>().enabled = true;
         
         IsInvulnerable = false;
-        SetAlpha(1f);
     }
 
     private void SetAlpha(float alpha)
