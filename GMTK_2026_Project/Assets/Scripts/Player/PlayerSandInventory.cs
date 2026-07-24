@@ -27,6 +27,12 @@ public class PlayerSandInventory : MonoBehaviour
 
     public float PopSandTimeTokenFromFrontOfList()
     {
+        if (sandPickupTimeTokens.Count == 0)
+        {
+            Debug.LogWarning("Tried to pop from empty sand token list.");
+            return 0f;
+        }
+
         float cur = sandPickupTimeTokens[0];
         sandPickupTimeTokens.RemoveAt(0);
         return cur;

@@ -627,8 +627,9 @@ GameObject:
   - component: {fileID: 941813254447449173}
   - component: {fileID: 6427829492033570995}
   - component: {fileID: 8039659366532927698}
-  - component: {fileID: 2645992858245186828}
   - component: {fileID: 3287257814587796162}
+  - component: {fileID: 2645992858245186828}
+  - component: {fileID: 2618690838663901415}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -765,6 +766,23 @@ MonoBehaviour:
   dashSpeed: 15
   dashDuration: 0.2
   dashCooldown: 1
+--- !u!114 &3287257814587796162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8777403616731228612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbd551a529b1d346bce1b10628812e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHearts: 4
+  heartImgPrefab: {fileID: 3741463601150104558, guid: a5396a14adaa6b243b5790376e615a68, type: 3}
+  heartsLayoutGroup: {fileID: 5734612784518797580}
+  refractoryPeriod: 2
+  spriteRenderer: {fileID: 5851480908521324477}
 --- !u!114 &2645992858245186828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,7 +797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSandInventory
   sandTokenText: {fileID: 1261759246780957424}
   sandPickupTimeTokens: []
---- !u!114 &3287257814587796162
+--- !u!114 &2618690838663901415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -788,14 +806,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8777403616731228612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfbd551a529b1d346bce1b10628812e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 63fdbf2f81d8c194aa7d65bfd42fcab1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHearts: 3
-  heartImgPrefab: {fileID: 3741463601150104558, guid: a5396a14adaa6b243b5790376e615a68, type: 3}
-  heartsLayoutGroup: {fileID: 5734612784518797580}
-  refractoryPeriod: 2
-  spriteRenderer: {fileID: 5851480908521324477}
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerArtifactInventory
+  maxArtifacts: 3
 --- !u!1 &9026117341085977561
 GameObject:
   m_ObjectHideFlags: 0

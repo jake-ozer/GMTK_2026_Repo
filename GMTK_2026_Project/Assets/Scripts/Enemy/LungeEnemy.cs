@@ -131,7 +131,7 @@ public class LungeEnemy : MonoBehaviour
         }
     }
 
-    void StartDying()
+    public void StartDying()
     {
         currentState = State.Dying;
         stateTimer = fadeDuration;

@@ -8,6 +8,8 @@ public class SandDeposit : MonoBehaviour
     [SerializeField] private float timeBetweenSandDeposits;
     private SandSystem sandSystem;
 
+    private EnemySpawningSystem ess;
+    
     private void Awake()
     {
         sandSystem = FindObjectOfType<SandSystem>();
@@ -18,6 +20,20 @@ public class SandDeposit : MonoBehaviour
         var playerSandInventory = other.GetComponent<PlayerSandInventory>();
         if (playerSandInventory != null)
         {
+            //GROSS-----
+            //this is gross but idc its a game jam
+            ess = FindFirstObjectByType<EnemySpawningSystem>();
+            ess.enabled = false;
+            ess.SetSpawning(false);
+           
+            //make all ghosts disappear
+            LungeEnemy[] enemies = FindObjectsByType<LungeEnemy>(FindObjectsSortMode.None);
+            foreach (var e in enemies)
+            {
+                e.StartDying();
+            }
+            //GROSS-----
+            
             StartCoroutine(SandDepositRoutine(playerSandInventory, other.GetComponent<PlayerMovement>()));
         }
     }
@@ -35,5 +51,7 @@ public class SandDeposit : MonoBehaviour
         }
         
         playerMovement.EnableMovement();
+        
+        ess.enabled = true;
     }
 }
