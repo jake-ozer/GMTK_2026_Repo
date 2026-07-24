@@ -59,6 +59,7 @@ public class SandSystem : MonoBehaviour
     private void OnSandTimerExpired()
     {
         //add logic here when ready
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
         Debug.Log("<color=magenta>SAND TIMER EXPIRED -> GAME OVER</color>");
     }
 }
