@@ -23,6 +23,7 @@ public class PlayerSandInventory : MonoBehaviour
     public void AddSandTimeToken(float time)
     {
         sandPickupTimeTokens.Add(time);
+        GetComponentInChildren<PlayerAudio>().PlayCollectSandAudio();
     }
 
     public float PopSandTimeTokenFromFrontOfList()

@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
         GetComponent<PlayerHealth>().IsInvulnerable = true;
+        GetComponentInChildren<PlayerAudio>().PlayDashAudio();
     }
 
     public void EnableMovement()

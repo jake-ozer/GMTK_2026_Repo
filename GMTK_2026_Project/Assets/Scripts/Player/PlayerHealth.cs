@@ -44,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
         GameObject heartToRemove = curHearts[lastIndex];
         curHearts.RemoveAt(lastIndex);
         Destroy(heartToRemove);
+        GetComponentInChildren<PlayerAudio>().PlayPlayerHurtAudio(curHearts.Count);
 
         if (curHearts.Count == 0)
         {
