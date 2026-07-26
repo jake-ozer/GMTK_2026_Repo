@@ -123,6 +123,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3625699047374628055}
+  - {fileID: 6712531681302621183}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5349394404525204612
@@ -184,3 +185,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SandDeposit
   timeBetweenSandDeposits: 1
+--- !u!1001 &2155623021173852707
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7378628542632698310}
+    m_Modifications:
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805470839030159817, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_Name
+      value: SandDepositAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368836349070067326, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8620281245e984f5aa97978d3f4d5830, type: 3}
+    - target: {fileID: 6368836349070067326, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7274093148551032541, guid: 762d058830c054414bb163ec710ca0b0, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+--- !u!4 &6712531681302621183 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4669665777390051804, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
+  m_PrefabInstance: {fileID: 2155623021173852707}
+  m_PrefabAsset: {fileID: 0}

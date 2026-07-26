@@ -91,6 +91,7 @@ public class LungeEnemy : MonoBehaviour
         {
             currentState = State.Waiting;
             stateTimer = waitBeforeDash;
+            GetComponentInChildren<LungeEnemyAudio>().PlayPauseAudio();
             return;
         }
 
@@ -117,6 +118,8 @@ public class LungeEnemy : MonoBehaviour
 
         stateTimer = dashDuration;
         currentState = State.Dashing;
+
+        GetComponentInChildren<LungeEnemyAudio>().PlayLungeAudio();
     }
 
     void HandleDashing()

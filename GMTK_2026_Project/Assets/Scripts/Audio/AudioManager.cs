@@ -6,7 +6,10 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance { get { return _instance; } }
 
     [Header("Sources")]
+    [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource playerHealthNotifSource;
+    [SerializeField] AudioSource playerLoseGameSource;
+    [SerializeField] AudioSource allEnemiesDieSource;
 
     private void Awake()
     {
@@ -21,5 +24,17 @@ public class AudioManager : MonoBehaviour
     public void PlayPlayerHealthNotifAudio()
     {
         playerHealthNotifSource.Play();
+    }
+
+
+    public void OnLoseGame()
+    {
+        playerLoseGameSource.Play();
+        musicSource.Stop();
+    }
+
+    public void PlayAllEnemiesDieAudio()
+    {
+        allEnemiesDieSource.Play();
     }
 }

@@ -21,6 +21,7 @@ public class PlayerArtifactInventory : MonoBehaviour
     public void AddArtifact(Artifact artifact)
     {
         artifacts.Add(artifact);
+        GetComponentInChildren<PlayerAudio>().PlayCollectArtifactAudio();
         if (artifacts.Count >= maxArtifacts)
         {
             OnAllArtifactsCollected();

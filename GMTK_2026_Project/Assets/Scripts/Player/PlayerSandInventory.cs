@@ -34,6 +34,8 @@ public class PlayerSandInventory : MonoBehaviour
             return 0f;
         }
 
+        GetComponentInChildren<PlayerAudio>().PlayDepositSandAudio();
+
         float cur = sandPickupTimeTokens[0];
         sandPickupTimeTokens.RemoveAt(0);
         return cur;

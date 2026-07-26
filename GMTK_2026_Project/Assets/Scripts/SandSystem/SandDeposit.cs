@@ -28,6 +28,13 @@ public class SandDeposit : MonoBehaviour
            
             //make all ghosts disappear
             LungeEnemy[] enemies = FindObjectsByType<LungeEnemy>(FindObjectsSortMode.None);
+
+            if (enemies.Length > 0)
+            {
+                // Invoke(nameof(AudioManager.Instance.PlayAllEnemiesDieAudio), 0.2f);
+                AudioManager.Instance.PlayAllEnemiesDieAudio();
+            }
+
             foreach (var e in enemies)
             {
                 e.StartDying();
@@ -41,7 +48,8 @@ public class SandDeposit : MonoBehaviour
     private IEnumerator SandDepositRoutine(PlayerSandInventory playerSandInventory, PlayerMovement playerMovement)
     {
         playerMovement.DisableMovement();
-        
+        GetComponentInChildren<AudioSource>().Play();
+
         int numSandTokens = playerSandInventory.sandPickupTimeTokens.Count;
         for (int i = 0; i < numSandTokens; i++)
         {
@@ -50,6 +58,7 @@ public class SandDeposit : MonoBehaviour
             sandSystem.ReplenishSandTimer(curTime);
         }
         
+        // GetComponentInChildren<AudioSource>().Stop();
         playerMovement.EnableMovement();
         
         ess.enabled = true;
