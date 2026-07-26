@@ -47,6 +47,8 @@ public class SandDeposit : MonoBehaviour
 
     private IEnumerator SandDepositRoutine(PlayerSandInventory playerSandInventory, PlayerMovement playerMovement)
     {
+        if (playerMovement == null) yield break;
+
         playerMovement.DisableMovement();
         GetComponentInChildren<AudioSource>().Play();
 

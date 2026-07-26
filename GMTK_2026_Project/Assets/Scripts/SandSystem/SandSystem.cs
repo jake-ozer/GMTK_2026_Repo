@@ -14,7 +14,9 @@ public class SandSystem : MonoBehaviour
     private float sandTimerCurrent;
     private bool decrementSandTimer;
     private bool hasFiredHalfEvent;
-    
+
+    public GameObject LavaBalls;
+
     void Start()
     {
         sandTimerCurrent = sandTimerMax;
@@ -58,8 +60,12 @@ public class SandSystem : MonoBehaviour
     
     private void OnSandTimerExpired()
     {
-        //add logic here when ready
-        Destroy(GameObject.FindGameObjectWithTag("Player"));
-        Debug.Log("<color=magenta>SAND TIMER EXPIRED -> GAME OVER</color>");
+        Instantiate(LavaBalls, new Vector3(11.91f, -22.1f, 0f), Quaternion.identity);
+        Instantiate(LavaBalls, new Vector3(-11.02f, -35.16f, 0f), Quaternion.identity);
+        Instantiate(LavaBalls, new Vector3(15.85f, -1.64f, 0f), Quaternion.identity);
+        Instantiate(LavaBalls, new Vector3(-34.8f, 11.3f, 0f), Quaternion.identity);
+        Instantiate(LavaBalls, new Vector3(-3.25f, 17.38f, 0f), Quaternion.identity);
+
+        Destroy(gameObject);
     }
 }

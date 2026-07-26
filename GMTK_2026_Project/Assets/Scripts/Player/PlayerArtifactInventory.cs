@@ -7,6 +7,9 @@ public class PlayerArtifactInventory : MonoBehaviour
     [SerializeField] private int maxArtifacts;
     [SerializeField] private TextMeshProUGUI artifactsFoundLabel;
     private List<Artifact> artifacts;
+
+    public GameObject ClosedDoor;
+    public GameObject OpenDoor;
     
     private void Awake()
     {
@@ -30,8 +33,8 @@ public class PlayerArtifactInventory : MonoBehaviour
 
     private void OnAllArtifactsCollected()
     {
-        //game win logic here
-        Debug.Log("<color=green>All artifacts collected. Game win.</color>");
+        Destroy(ClosedDoor);
+        Instantiate(OpenDoor, new Vector3(-4.419f, 43f, 0f), Quaternion.identity);
     }
     
 }
