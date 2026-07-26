@@ -87,7 +87,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        //AudioManager.Instance.OnLoseGame();
+        AudioManager.Instance.OnLoseGame();
         Debug.Log($"<color=cyan>{name} has died.</color>");
         //Destroy(gameObject); game over logic here
     }

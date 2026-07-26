@@ -51,6 +51,7 @@ public class SandDeposit : MonoBehaviour
 
         playerMovement.DisableMovement();
         GetComponentInChildren<AudioSource>().Play();
+        AudioManager.Instance.SlowTime();
 
         int numSandTokens = playerSandInventory.sandPickupTimeTokens.Count;
         for (int i = 0; i < numSandTokens; i++)
@@ -62,6 +63,7 @@ public class SandDeposit : MonoBehaviour
         
         // GetComponentInChildren<AudioSource>().Stop();
         playerMovement.EnableMovement();
+        AudioManager.Instance.NormalTime();
         
         ess.enabled = true;
     }

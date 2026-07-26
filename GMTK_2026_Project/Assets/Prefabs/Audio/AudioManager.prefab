@@ -84,6 +84,9 @@ MonoBehaviour:
   playerHealthNotifSource: {fileID: 1315559096936354943}
   playerLoseGameSource: {fileID: 3959243622115565268}
   allEnemiesDieSource: {fileID: 7748436260931297710}
+  normalMusicSnapshot: {fileID: 24500006, guid: 1a80c7f1c777e42fb97ff3ab7c5604a2, type: 2}
+  slowedMusicSnapshot: {fileID: -8360815864955351300, guid: 1a80c7f1c777e42fb97ff3ab7c5604a2, type: 2}
+  transitionTime: 0.5
 --- !u!1001 &3739499878028027856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 6368836349070067326, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: 3076905772280299050, guid: 762d058830c054414bb163ec710ca0b0, type: 2}
+      objectReference: {fileID: 3059259102021995601, guid: 0291ca56f93b44c4991cdc029274e749, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -218,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 6368836349070067326, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: -8091198068550834130, guid: 762d058830c054414bb163ec710ca0b0, type: 2}
+      objectReference: {fileID: -3133986056401551299, guid: e6eb28d7e06d24775932cbc0bf972af9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -376,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 6368836349070067326, guid: d49b4300195154b2eb6e6bb75a5457b7, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: -8091198068550834130, guid: 762d058830c054414bb163ec710ca0b0, type: 2}
+      objectReference: {fileID: -5341799058949999189, guid: e6eb28d7e06d24775932cbc0bf972af9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

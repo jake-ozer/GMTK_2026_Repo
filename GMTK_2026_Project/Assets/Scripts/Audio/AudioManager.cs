@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,6 +12,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource playerHealthNotifSource;
     [SerializeField] AudioSource playerLoseGameSource;
     [SerializeField] AudioSource allEnemiesDieSource;
+
+    [Header("Snapshot")]
+    [SerializeField] AudioMixerSnapshot normalMusicSnapshot;
+    [SerializeField] AudioMixerSnapshot slowedMusicSnapshot;
+    public float transitionTime = 0.5f; 
 
     private void Awake()
     {
@@ -36,5 +43,15 @@ public class AudioManager : MonoBehaviour
     public void PlayAllEnemiesDieAudio()
     {
         allEnemiesDieSource.Play();
+    }
+
+    public void SlowTime()
+    {
+        slowedMusicSnapshot.TransitionTo(transitionTime);
+    }
+
+    public void NormalTime()
+    {
+        normalMusicSnapshot.TransitionTo(transitionTime);
     }
 }

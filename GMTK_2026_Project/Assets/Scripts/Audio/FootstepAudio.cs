@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class FootstepAudio : MonoBehaviour
 {
+    [SerializeField] AudioSource footstepSource;
     [SerializeField] AudioClip[] footsteps;
 
     [Range(0.5f,4f)]
@@ -25,7 +26,7 @@ public class FootstepAudio : MonoBehaviour
             distanceMoved = 0;
 
             int r = Random.Range(0,footsteps.Length);
-            source.PlayOneShot(footsteps[r]);
+            footstepSource.PlayOneShot(footsteps[r]);
 
         }
 

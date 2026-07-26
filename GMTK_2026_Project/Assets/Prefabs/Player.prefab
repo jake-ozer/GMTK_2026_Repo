@@ -986,8 +986,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63fdbf2f81d8c194aa7d65bfd42fcab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerArtifactInventory
-  maxArtifacts: 3
+  maxArtifacts: 4
   artifactsFoundLabel: {fileID: 1824839692964949306}
+  ClosedDoor: {fileID: 0}
+  OpenDoor: {fileID: 3861488773185840358, guid: 331b3b562375d45459a671df1f2d3024, type: 3}
 --- !u!1 &9026117341085977561
 GameObject:
   m_ObjectHideFlags: 0
